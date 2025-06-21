@@ -9,10 +9,9 @@
 
 This PoC solves [#20](https://github.com/hackerschoice/gfi/issues/20).
 
-It is possible to relay via AWS's Queues. There are two advantages over tunneling via S3 buckets:
-1. SQS are faster than S3 buckets.
-2. The HTTPS SNI only shows the AWS endpoint (sqs.&lt;REGION&gt;.amazonaws.com). Blocking this would require to block all of AWS (something the regime has never dared to do).
-
+This trick tunnels via AWS's Simple-Queue-Service (SQS). It has some advantages over S3-bucket-tunneling:
+1. SQS are faster than S3 buckets (less latency).
+2. S3 can be blocked by SNI-filtering. SQS can not be blocked that way because SQS uses the main AWS endpoint (`sqs.<REGION>.amazonaws.com`). The autocrats have never dared to block the main endpoint (and doing so would put their own criticial infra at risk)
 
 Requirements:
 ---
