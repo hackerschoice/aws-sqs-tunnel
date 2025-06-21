@@ -7,7 +7,7 @@
 
 ---
 
-This PoC solves [#20](https://github.com/hackerschoice/gfi/issues/20).
+This PoC solves https://github.com/hackerschoice/gfi/issues/20 (private).
 
 This trick tunnels via AWS's Simple-Queue-Service (SQS). It has some advantages over S3-bucket-tunneling:
 1. SQS are faster than S3 buckets (less latency).
